@@ -1,0 +1,11 @@
+<div class="body-product">
+    <div class="fancy-header">
+        <a style="color: #006699; text-decoration: none" routerLink="/home"><span>Home / </span></a><span>Sản Phẩm</span>
+    </div>
+    <div class="list-category">
+        <div *ngFor="let item of listCategory" class="item-category" [class.item-active]="item.active">
+            <a style="cursor: pointer;">{{item.name}}</a>
+        </div>
+
+    </div>
+</div>

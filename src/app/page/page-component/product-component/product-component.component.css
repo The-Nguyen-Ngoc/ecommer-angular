@@ -1,0 +1,27 @@
+.body-product {
+    margin: 0 300px;
+    background-color: #fffaf0;
+}
+
+.fancy-header {
+    padding: 15px;
+    font-size: 18px;
+    color: red;
+    background-color: aliceblue;
+}
+
+.list-category {
+    display: flex;
+    justify-content: center;
+}
+
+.item-category {
+    padding: 15px;
+    font-size: 15px;
+}
+
+.item-active {
+    background-color: antiquewhite;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

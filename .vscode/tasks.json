@@ -1,0 +1,15 @@
+{
+  // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-dev",
+      "type": "shell",
+      "command": "env ng build --base-href=/ecommer/ --watch --output-path=dist/ecommer",
+      "group": "build",
+      "problemMatcher": [
+          "$msCompile"
+      ]
+  },
+  ]
+}

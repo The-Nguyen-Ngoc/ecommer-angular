@@ -1,0 +1,9 @@
+<nav class="menu-bar">
+    <ul>
+        <li *ngFor="let item of navs"><a [routerLinkActive]="['active-nav']" [routerLink]="[item.link]"><i [class]="item.icon"></i>&ensp;{{item.name}}</a></li>
+        <div><span class="p-input-icon-left">
+          <input type="text" pInputText [(ngModel)]="textSearch" placeholder="Search">         
+          <i class="pi pi-search"></i>
+      </span></div>
+    </ul>
+</nav>
