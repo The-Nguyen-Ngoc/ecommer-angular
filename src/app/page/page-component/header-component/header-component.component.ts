@@ -16,8 +16,8 @@ export class HeaderComponentComponent implements OnInit {
   ngOnInit() {
     this.navigationService.getListNavigations().subscribe((res) =>{
       this.navs = res;
-      this.router.navigate([this.navs[1].link]);
-      this.navs[1].active = true;
+      // this.router.navigate([this.navs[1].link]);
+      this.navs[0].active = true;
     })
   }
 

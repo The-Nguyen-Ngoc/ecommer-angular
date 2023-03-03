@@ -4,7 +4,6 @@ import { ContactComponentComponent } from './page/page-component/contact-compone
 import { ProductComponentComponent } from './page/page-component/product-component/product-component.component';
 import { CartComponentComponent } from './page/page-component/cart-component/cart-component.component';
 import { HomeComponentComponent } from './page/page-component/home-component/home-component.component';
-import { PageComponentComponent } from './page/page-component/page-component.component';
 
 //Khai báo một constant chứa các route của app
 const routes: Routes = [

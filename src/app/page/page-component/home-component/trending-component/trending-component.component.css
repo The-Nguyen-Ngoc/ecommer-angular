@@ -38,7 +38,9 @@
 }
 
 .text-trending {
-    color: #00008B;
+    color: #CC3300;
+    font-size: 12px;
+    text-align: center;
 }
 
 .trending-body {

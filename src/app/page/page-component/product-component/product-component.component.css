@@ -1,13 +1,14 @@
 .body-product {
     margin: 0 300px;
     background-color: #fffaf0;
+    margin-top: 60px;
 }
 
 .fancy-header {
     padding: 15px;
     font-size: 18px;
     color: red;
-    background-color: aliceblue;
+    background-color: #ffffff;
 }
 
 .list-category {
@@ -24,4 +25,140 @@
     background-color: antiquewhite;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.list-product {
+    background-color: antiquewhite;
+}
+
+.active-category {
+    color: #993300;
+}
+
+.inactive-category {
+    cursor: pointer;
+    color: #dd9676;
+}
+
+.category {
+    margin-bottom: 20px;
+}
+
+.category h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    padding: 25px;
+}
+
+.products-empty {
+    display: grid;
+    text-align: center;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 50%);
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.price-product {
+    font-size: 13px;
+    color: steelblue;
+}
+
+.price-product-km {
+    font-size: 13px;
+    text-decoration: line-through
+}
+
+.price-product-promotion {
+    color: red;
+}
+
+.out-stock {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 30px;
+    padding: 6% 8%;
+    box-sizing: border-box;
+    background: red;
+    color: #fff;
+    white-space: nowrap;
+    font: 700 15px / 18px "Roboto", Helvetica, Arial, Verdana, sans-serif;
+    text-transform: none;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    font-size: 13px;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: #000;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.product-stock {
+    cursor: auto;
+}
+
+.filter {
+    padding-top: 20px;
+    margin-left: 35px;
+}
+
+::ng-deep .p-dropdown-label {
+    font-size: 12px;
+    font: normal 400 13px / 17px "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif;
 }
