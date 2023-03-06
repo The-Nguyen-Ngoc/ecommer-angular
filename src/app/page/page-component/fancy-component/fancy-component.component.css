@@ -1,0 +1,13 @@
+.fancy-header {
+    font-weight: 700;
+    padding: 15px;
+    font-size: 18px;
+    color: red;
+    background-color: #ffffff;
+}
+
+@media (max-width: 420px) {
+    .fancy-header {
+        font-size: 15px;
+    }
+}

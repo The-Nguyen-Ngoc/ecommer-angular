@@ -63,3 +63,21 @@
 .trending-item a {
     color: #003399;
 }
+
+h2 {
+    padding-top: 10px;
+    font-size: 25px;
+}
+
+@media (max-width: 420px) {
+    .tag-left {
+        width: 88%;
+    }
+    .trending {
+        display: block;
+    }
+    .img-right-mobile {
+        width: 100%;
+        height: auto;
+    }
+}

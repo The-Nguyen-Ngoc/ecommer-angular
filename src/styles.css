@@ -5,5 +5,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
+    margin: 0px;
     font: normal 700 13px / 17px "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif;
 }

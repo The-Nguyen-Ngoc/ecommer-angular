@@ -3,6 +3,7 @@ import { MenuItem } from 'primeng/api';
 import { CategoryService } from 'src/app/service/category.service';
 import { ProductService } from 'src/app/service/product.service';
 import { ActivatedRoute } from '@angular/router';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 interface Filter {
   name: string,
@@ -24,9 +25,14 @@ export class ProductComponentComponent implements OnInit {
   itemsPerPage = 20;
   categoryId: any;
   filters!: Filter[];
+  public displayMenuMobile = false;
+  public deviceInfo: any;
+  public showCategoryMobile= true;
+
 
   selectedFilter = '';
-  constructor(private categoryService: CategoryService, private productService: ProductService, private route: ActivatedRoute) { 
+  constructor(private categoryService: CategoryService, private productService: ProductService, private route: ActivatedRoute
+    ,private deviceService: DeviceDetectorService) { 
     this.filters = [
       {name: 'Giá thấp đến cao', code: 'price-low-to-hight'},
       {name: 'Giá cao đến thấp', code: 'price-hight-to-low'},
@@ -38,6 +44,7 @@ export class ProductComponentComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
     this.categoryService.getListCategory().subscribe((res) => {
       this.listCategory = res;
       this.route.queryParams.subscribe(params => {
@@ -60,6 +67,10 @@ export class ProductComponentComponent implements OnInit {
         }
       }
     })
+  }
+
+  showHideCategory(){
+    this.showCategoryMobile = !this.showCategoryMobile
   }
 
   changeFilter(){

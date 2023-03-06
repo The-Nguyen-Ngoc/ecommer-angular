@@ -12,6 +12,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import { HttpClientModule } from '@angular/common/http';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {DropdownModule} from 'primeng/dropdown';
+import {SidebarModule} from 'primeng/sidebar';
+import {ButtonModule} from 'primeng/button';
 // pipe
 import { CurrencySuffixPipe } from './pipe/currency.pipe';
 // componenent
@@ -24,6 +26,7 @@ import { FlashSaleComponentComponent } from './page/page-component/home-componen
 import { TrendingComponentComponent } from './page/page-component/home-component/trending-component/trending-component.component';
 import { FooterComponentComponent } from './page/page-component/home-component/footer-component/footer-component.component';
 import { CartComponentComponent } from './page/page-component/cart-component/cart-component.component';
+import { FancyComponentComponent } from './page/page-component/fancy-component/fancy-component.component';
 // service
 import { NavigationService } from './service/navigation-service.service';
 import { TrendingService } from './service/trending-service.service';
@@ -39,7 +42,8 @@ import { TrendingService } from './service/trending-service.service';
     TrendingComponentComponent,
     FooterComponentComponent,
     CartComponentComponent,
-    CurrencySuffixPipe
+    CurrencySuffixPipe,
+    FancyComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,9 @@ import { TrendingService } from './service/trending-service.service';
     FormsModule,
     HttpClientModule,
     BreadcrumbModule,
-    DropdownModule
+    DropdownModule,
+    SidebarModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

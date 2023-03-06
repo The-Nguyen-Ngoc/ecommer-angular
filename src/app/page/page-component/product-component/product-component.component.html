@@ -1,45 +1,65 @@
 <div class="body-product">
-    <div class="fancy-header">
-        <a style="color: #006699; text-decoration: none" routerLink="/home"><span>Home / </span></a><span>Sản Phẩm</span>
-    </div>
-    <div class="list-category">
-        <div *ngFor="let item of listCategory" class="item-category" [class.item-active]="item.active" (click)="clickCategory(item.id)">
-            <a [ngClass]="item.active ? 'active-category' : 'inactive-category'">{{item.name}}</a>
+    <!-- desktop -->
+    <div class="desktop-product" *ngIf="deviceInfo.deviceType == 'desktop'">
+        <app-fancy-component [fancyName]="'Sản Phẩm'"></app-fancy-component>
+
+        <div class="list-category">
+            <div *ngFor="let item of listCategory" class="item-category" [class.item-active]="item.active" (click)="clickCategory(item.id)">
+                <a [ngClass]="item.active ? 'active-category' : 'inactive-category'">{{item.name}}</a>
+            </div>
         </div>
 
-    </div>
-    <div class="list-product">
-        <div class="filter">
-            <span>Sắp xếp: </span>
-            <p-dropdown [options]="filters" [(ngModel)]="selectedFilter" optionLabel="name" optionValue="code" (onChange)="changeFilter()"></p-dropdown>
-        </div>
-        <div class="category">
-            <div class="products" *ngIf="listProductShow && listProductShow.length > 0">
-                <div class="product" [class.product-stock]="!product.stock" *ngFor="let product of listProductShow">
-                    <div class="out-stock" *ngIf="!product.stock">
-                        <span>Hết Hàng (Sắp Về Hàng)</span>
+        <div class="list-product">
+            <div class="filter">
+                <span>Sắp xếp: </span>
+                <p-dropdown [options]="filters" [(ngModel)]="selectedFilter" optionLabel="name" optionValue="code" (onChange)="changeFilter()"></p-dropdown>
+            </div>
+            <div class="category">
+                <div class="products" *ngIf="listProductShow && listProductShow.length > 0">
+                    <div class="product" [class.product-stock]="!product.stock" *ngFor="let product of listProductShow">
+                        <div class="out-stock" *ngIf="!product.stock">
+                            <span>Hết Hàng (Sắp Về Hàng)</span>
+                        </div>
+                        <img [src]="'assets/img/img-product/' + product.linkImage" [alt]="product.name">
+                        <span>{{product.name}}<span *ngIf="product.percentReduction > 0" style="color: #990000;"> (Giảm {{product.percentReduction}}%)</span></span>
+                        <span style="margin-bottom: 15px;" class="price-product" *ngIf="product.percentReduction === 0">{{ product.cost | currencySuffix:'VND' }}</span>
+                        <span style="margin-bottom: 15px;" *ngIf="product.percentReduction > 0"><span  class="price-product-km" >{{ product.cost | currencySuffix:'VND' }}</span> <span class="price-product-promotion"> {{ product.price | currencySuffix:'VND' }}</span></span>
+
                     </div>
-                    <img [src]="'assets/img/img-product/' + product.linkImage" [alt]="product.name">
-                    <span>{{product.name}}<span *ngIf="product.percentReduction > 0" style="color: #990000;"> (Giảm {{product.percentReduction}}%)</span></span>
-                    <span style="margin-bottom: 15px;" class="price-product" *ngIf="product.percentReduction === 0">{{ product.cost | currencySuffix:'VND' }}</span>
-                    <span style="margin-bottom: 15px;" *ngIf="product.percentReduction > 0"><span  class="price-product-km" >{{ product.cost | currencySuffix:'VND' }}</span> <span class="price-product-promotion"> {{ product.price | currencySuffix:'VND' }}</span></span>
-
+                    <!-- add more products as needed -->
                 </div>
-                <!-- add more products as needed -->
-            </div>
-            <div class="products-empty" *ngIf="!listProductShow || listProductShow.length == 0">
-                <div class="">
+                <div class="products-empty" *ngIf="!listProductShow || listProductShow.length == 0">
+                    <div class="">
 
-                    <h3 style="color: red;">Không có sản phẩm nào tồn tại!</h3>
+                        <h3 style="color: red;">Không có sản phẩm nào tồn tại!</h3>
 
+                    </div>
+                    <!-- add more products as needed -->
                 </div>
-                <!-- add more products as needed -->
             </div>
         </div>
+        <div class="pagination" *ngIf="listProductShow && listProductShow.length > 0">
+            <a class="prev pointer" (click)="prevPage()">&laquo; Trước</a>
+            <a [ngClass]="((index+1) == currentPage) ? 'active' : ''" *ngFor="let item of pageCount, let index = index" (click)="clickPageNumber(index)">{{index+1}}</a>
+            <a class="next pointer" (click)="nextPage()">Sau &raquo;</a>
+        </div>
     </div>
-    <div class="pagination" *ngIf="listProductShow && listProductShow.length > 0">
-        <a class="prev pointer" (click)="prevPage()">&laquo; Previous</a>
-        <a [ngClass]="((index+1) == currentPage) ? 'active' : ''" *ngFor="let item of pageCount, let index = index" (click)="clickPageNumber(index)">{{index+1}}</a>
-        <a class="next pointer" (click)="nextPage()">Next &raquo;</a>
+
+    <!-- mobile -->
+    <div class="mobile" *ngIf="deviceInfo.deviceType == 'mobile'">
+        <app-fancy-component [fancyName]="'Sản Phẩm'"></app-fancy-component>
+        <div *ngIf="showCategoryMobile" class="list-category-mobile">
+            <div *ngFor="let item of listCategory" class="item-category" [class.item-active]="item.active" (click)="clickCategory(item.id)">
+                <a [ngClass]="item.active ? 'active-category' : 'inactive-category'">{{item.name}}</a>
+            </div>
+        </div>
+        <div class="show-hide-category">
+            <div class="show-hide-mobile" *ngIf="!showCategoryMobile" (click)="showHideCategory()">
+                <span>Danh mục sản phẩm</span><i class="pi pi-angle-double-down"></i>
+            </div>
+            <div class="show-hide-mobile" *ngIf="showCategoryMobile" (click)="showHideCategory()">
+                <span>Ẩn danh mục sản phẩm</span><i class="pi pi-angle-double-up"></i>
+            </div>
+        </div>
     </div>
 </div>
