@@ -40,7 +40,7 @@ export class ProductComponentComponent implements OnInit {
       {name: 'Tên Z-A', code: 'name-z-a'},
       {name: 'Giảm nhiều', code: 'percent'},
   ];
-  this.selectedFilter = this.filters[4].code
+  this.selectedFilter = this.filters[0].code
   }
 
   ngOnInit() {

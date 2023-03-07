@@ -1,5 +1,5 @@
 <div class="home-page">
     <app-fancy-component [fancyName]="''"></app-fancy-component>
-    <app-trending-component></app-trending-component>
-    <app-flash-sale-component></app-flash-sale-component>
+    <app-trending-component [listTrending]="listTrending"></app-trending-component>
+    <app-flash-sale-component [listProductFlashSale]="listProductFlashSale" *ngIf="listProductFlashSale && listProductFlashSale.length > 0"></app-flash-sale-component>
 </div>

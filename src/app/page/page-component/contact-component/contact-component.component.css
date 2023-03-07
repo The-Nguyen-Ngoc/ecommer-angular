@@ -1,0 +1,36 @@
+.contact-body {
+  margin: 60px 300px 0;
+
+}
+
+.content-body {
+  padding: 15px;
+  display: flex;
+}
+.text-body{
+  TEXT-ALIGN: justify;
+}
+.sidebar {
+  padding: 10px 10px;
+  width: 100%;
+  margin-left: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 50%);
+  font-size: 12px;
+  height: fit-content;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.side-header {
+  background: #e31616;
+  padding: 5px 20px;
+  margin: -5px 0 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  display: block;
+  border-radius: 10px;
+  text-align: center;
+}

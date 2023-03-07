@@ -1,3 +1,37 @@
-<p>
-  flash-sale-component works!
-</p>
+<div class="body-flashsale">
+  <div class="header-fs"><img src="assets/img/flash-sale-moi-ngay.png" class="mobile-img-flashsale"/></div>
+  <div class="content-fs">
+    <div class="products">
+      <div class="product" [class.product-stock]="!product.stock" *ngFor="let
+        product of listProductFlashSale">
+        <div class="out-stock">
+          <span>SALE SỐC!</span>
+        </div>
+        <img [src]="'assets/img/img-product/' + product.linkImage"
+          [alt]="product.name">
+        <div class="span-price-product">
+          <span>{{product.name}}<span *ngIf="product.percentReduction> 0"
+              style="color: #990000;"> (Giảm {{product.percentReduction}}%)</span></span><br>
+          <span style="margin-bottom: 15px;" class="price-product"
+            *ngIf="product.percentReduction === 0">{{ product.cost |
+            currencySuffix:'VND' }}</span>
+          <span style="margin-bottom: 15px;" *ngIf="product.percentReduction>
+            0"><span class="price-product-km">{{ product.cost |
+              currencySuffix:'VND' }}</span> <span
+              class="price-product-promotion"> {{ product.price |
+              currencySuffix:'VND' }}</span></span>
+        </div>
+        <div class="action-product">
+          <div class="button-product">
+            <button pButton type="button" label="Chi tiết"
+              class="p-button-info"></button>
+          </div>
+          <div class="button-product">
+            <button pButton type="button" label="" class="p-button-danger">+ <i
+                class="pi pi-cart-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

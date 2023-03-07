@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-flash-sale-component',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flash-sale-component.component.css']
 })
 export class FlashSaleComponentComponent implements OnInit {
-
+  @Input() listProductFlashSale: any;
   constructor() { }
 
   ngOnInit() {

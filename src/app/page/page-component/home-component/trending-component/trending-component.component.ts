@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TrendingService } from 'src/app/service/trending-service.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
@@ -8,17 +8,14 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   styleUrls: ['./trending-component.component.css']
 })
 export class TrendingComponentComponent implements OnInit {
-  public listTrending: any;
+  @Input() listTrending: any;
   public deviceInfo: any;
 
-  constructor(private trendingService: TrendingService, private deviceService: DeviceDetectorService) { }
+  constructor(private deviceService: DeviceDetectorService) { }
 
   ngOnInit() {
     this.deviceInfo = this.deviceService.getDeviceInfo();
 
-    this.trendingService.getListTrending().subscribe((res)=>{
-      this.listTrending = res;
-    })
   }
 
 }

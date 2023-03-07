@@ -154,27 +154,6 @@ span {
     font-size: 13px;
 }
 
-.pagination {
-    display: inline-block;
-}
-
-.pagination a {
-    color: #000;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-}
-
-.pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.pointer {
-    cursor: pointer;
-}
-
 .product-stock {
     cursor: auto;
 }
@@ -187,6 +166,54 @@ span {
 ::ng-deep .p-dropdown-label {
     font-size: 12px;
     font: normal 400 13px / 17px "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif;
+}
+::ng-deep .p-button{
+    padding: 5px;
+    padding-left: 6px;
+    padding-top: 6px;
+    font-size: 13px;
+    justify-content: center;
+    width: 60px;
+  }
+.button-product{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.action-product{
+    margin-bottom:12px;
+    display: flex;
+}
+.span-price-product{
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 93px;
+}
+
+
+/* page */
+.pagination a.active {
+    color: rgb(230, 25, 25);
+    font-weight: 700;
+    border-radius: 6px;
+
+}
+.pagination {
+    display: inline-block;
+}
+.not-active-page{
+    cursor: pointer;
+}
+.pagination a {
+    color: #0b0b91;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 @media (max-width: 420px) {
@@ -202,4 +229,29 @@ span {
         padding: 15px;
         color: red;
     }
+    .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        padding: 17px;
+    }
+    .product{
+        font-size: 12px;
+    }
+    .out-stock{
+        font-size: 12px;
+    }
+    .filter{
+        font-size: 12px;
+        margin-left: 27px;
+    }
+    .item-category{
+        padding: 10px 15px 10px 15px;
+        font-size: 12px;
+    }
+    .item-active{
+        background-color: #ecb366;
+        border-radius: 10px;
+    }
+   
 }
