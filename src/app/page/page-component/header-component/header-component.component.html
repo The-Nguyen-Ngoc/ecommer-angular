@@ -2,15 +2,18 @@
     <nav>
         <div class="logo" *ngIf="deviceInfo.deviceType == 'desktop'">
             <a href="/ecommer/home">
-                <img src="assets/img/logo-web.png" height="59px" style="border-radius: 30px;" />
+                <img src="assets/img/logo-web.png" height="59px"
+                    style="border-radius: 30px;" />
             </a>
         </div>
         <ul *ngIf="deviceInfo.deviceType == 'desktop'">
-            <li *ngFor="let item of navs"><a [routerLinkActive]="['active-nav']" [routerLink]="[item.link]"><i [class]="item.icon"></i>&ensp;{{item.name}}</a></li>
+            <li *ngFor="let item of navs"><a [routerLinkActive]="['active-nav']"
+                    [routerLink]="[item.link]"><i [class]="item.icon"></i>&ensp;{{item.name}}</a></li>
             <div>
                 <span class="p-input-icon-left">
-                <input type="text" pInputText [(ngModel)]="textSearch" placeholder="Search">         
-                <i class="pi pi-search"></i>
+                    <input type="text" pInputText [(ngModel)]="textSearch"
+                        placeholder="Search">
+                    <i class="pi pi-search"></i>
                 </span>
             </div>
         </ul>
@@ -18,22 +21,33 @@
             <div class="mobile">
                 <div class="logo-mobile">
                     <a href="/ecommer/home">
-                        <img src="assets/img/logo-web.png" style="height: 70px;border-radius: 30px;" />
+                        <img src="assets/img/logo-web.png" style="height:
+                            70px;border-radius: 30px;" />
                     </a>
                 </div>
                 <div class="search-mobile">
                     <span class="p-input-icon-left">
-                        <input style="width: 150px;" type="text" pInputText [(ngModel)]="textSearch" placeholder="Search">         
+                        <input style="width: 150px;" type="text" pInputText
+                            [(ngModel)]="textSearch" placeholder="Search">
                         <i class="pi pi-search"></i>
                     </span>
                     <div class="side-bar-mobile">
-                        <p-sidebar [(visible)]="displayMenuMobile" position="right">
+                        <p-sidebar [(visible)]="displayMenuMobile"
+                            position="right">
                             <div>
-                                <div class="nav-mobile" *ngFor="let item of navs"><a [routerLinkActive]="['active-nav']" (click)="showHideMenuMobile()" [routerLink]="[item.link]"><i [class]="item.icon"></i>&ensp;{{item.name}}</a></div>
+                                <div class="nav-mobile" *ngFor="let item of
+                                    navs"><a [routerLinkActive]="['active-nav']"
+                                        (click)="showHideMenuMobile()"
+                                        [routerLink]="[item.link]"><i
+                                            [class]="item.icon"></i>&ensp;{{item.name}}</a></div>
                             </div>
                         </p-sidebar>
 
-                        <i (click)="showHideMenuMobile()" class="pi pi-align-justify" style="color: azure;"></i>
+                        <i (click)="showHideMenuMobile()" class="pi
+                            pi-align-justify" style=" color: red;
+                            padding: 3px;
+                            background: beige;
+                            border-radius: 3px;"></i>
                     </div>
                 </div>
 

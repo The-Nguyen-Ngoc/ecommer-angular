@@ -1,36 +1,101 @@
-.contact-body {
-  margin: 60px 300px 0;
+@media (min-width:768px) {
 
+
+  .contact-body {
+    margin: 60px 300px 0;
+
+  }
+
+  .img-contact {
+    border-radius: 8px;
+  }
+
+  .content-body {
+    padding: 15px;
+    display: flex;
+  }
+
+  .text-body {
+    TEXT-ALIGN: justify;
+  }
+
+  .sidebar {
+    padding: 10px 10px;
+    width: 100%;
+    margin-left: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 50%);
+    font-size: 12px;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .side-header {
+    background: #e31616;
+    padding: 5px 20px;
+    margin: -5px 0 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    display: block;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .item-img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
-.content-body {
-  padding: 15px;
-  display: flex;
-}
-.text-body{
-  TEXT-ALIGN: justify;
-}
-.sidebar {
-  padding: 10px 10px;
-  width: 100%;
-  margin-left: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgb(0 0 0 / 50%);
-  font-size: 12px;
-  height: fit-content;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+@media (max-width: 420px) {
+  .contact-body {
+    margin: 0;
+    margin-top: 90px;
 
-.side-header {
-  background: #e31616;
-  padding: 5px 20px;
-  margin: -5px 0 0;
-  font-size: 15px;
-  font-weight: 500;
-  color: #ffffff;
-  display: block;
-  border-radius: 10px;
-  text-align: center;
+  }
+
+  .content-body {
+    padding: 15px;
+    padding-top: 0;
+  }
+
+  .sidebar {
+    padding: 10px 10px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 50%);
+    font-size: 12px;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .side-header {
+    background: #e31616;
+    padding: 5px 20px;
+    margin: -5px 0 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    display: block;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .img-contact {
+    border-radius: 8px;
+  }
+
+  .item-img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .text-body {
+    TEXT-ALIGN: justify;
+    margin-top: 20px;
+  }
+
 }

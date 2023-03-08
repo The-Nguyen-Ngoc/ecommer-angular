@@ -4,31 +4,34 @@
             <div class="text-trending"><span><h2>Xu hướng mua sắm</h2></span></div>
             <div class="trending-body">
                 <div class="trending-item" *ngFor="let item of listTrending">
-                    <a [routerLink]="['/product']" [queryParams]="{ categoryId: item.idCategory }"><span>#{{item.arrange}}. </span><span>{{item.name}}</span></a>
+                    <a [routerLink]="['/product']" [queryParams]="{ categoryId:
+                        item.idCategory }"><span>#{{item.arrange}}. </span><span>{{item.name}}</span></a>
                     <p>{{item.description}}</p>
                 </div>
 
             </div>
         </div>
         <div class="tag-right">
-            <div class="img-right">
-                <img width="670" height="400" src="assets/img/trending/anh-1.jpg" />
+            <!-- <div class="img-right">
+                <img width="563" height="400" src="assets/img/trending/anh-1.jpg" />
             </div>
             <div class="img-left">
                 <div><img width="263" height="167" src="assets/img/trending/anh-2.jpg" /></div>
                 <div style="margin-top: 5px"> <img width="263" height="222" src="assets/img/trending/anh-3.png" /></div>
-            </div>
+            </div> -->
+            <gallery [autoPlay]="true" [thumb]="false" [playerInterval]="2000" (itemClick)="clickThumb()" [items]="images"></gallery>
         </div>
     </div>
     <div class="trending" *ngIf="deviceInfo.deviceType == 'mobile'">
         <div class="img-right-mobile">
-            <img src="assets/img/trending/anh-1.jpg" style="width: 100%;height: auto;" />
+            <gallery [autoPlay]="true" [thumb]="false" [playerInterval]="2000" (itemClick)="clickThumb()" [items]="images"></gallery>
         </div>
         <div class="tag-left">
             <div class="text-trending"><span><h2>Xu hướng mua sắm</h2></span></div>
             <div class="trending-body">
                 <div class="trending-item" *ngFor="let item of listTrending">
-                    <a [routerLink]="['/product']" [queryParams]="{ categoryId: item.idCategory }"><span>#{{item.arrange}}. </span><span>{{item.name}}</span></a>
+                    <a [routerLink]="['/product']" [queryParams]="{ categoryId:
+                        item.idCategory }"><span>#{{item.arrange}}. </span><span>{{item.name}}</span></a>
                     <p>{{item.description}}</p>
                 </div>
 

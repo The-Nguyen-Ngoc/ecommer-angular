@@ -14,6 +14,10 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {DropdownModule} from 'primeng/dropdown';
 import {SidebarModule} from 'primeng/sidebar';
 import {ButtonModule} from 'primeng/button';
+import { GalleryModule } from  'ng-gallery';
+
+import { GALLERY_CONFIG } from 'ng-gallery';
+
 // pipe
 import { CurrencySuffixPipe } from './pipe/currency.pipe';
 // componenent
@@ -55,9 +59,16 @@ import { TrendingService } from './service/trending-service.service';
     BreadcrumbModule,
     DropdownModule,
     SidebarModule,
-    ButtonModule
+    ButtonModule,
+    GalleryModule
   ],
-  providers: [],
+  providers: [{
+    provide: GALLERY_CONFIG,
+    useValue: {
+      dots: true,
+      imageSize: 'cover'
+    }
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
