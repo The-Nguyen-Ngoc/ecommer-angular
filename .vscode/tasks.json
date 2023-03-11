@@ -11,5 +11,14 @@
           "$msCompile"
       ]
   },
+  {
+      "label": "build-production",
+      "type": "shell",
+      "command": "ng build --base-href=/ecommer/ --configuration production",
+      "group": "build",
+      "problemMatcher": [
+          "$msCompile"
+      ]
+  },
   ]
 }
