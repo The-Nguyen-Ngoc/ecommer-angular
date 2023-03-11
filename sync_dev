@@ -1,4 +1,4 @@
 rm -fr dist
-ng build --base-href=/ecommer/ --configuration production --output-path=dist/ecommer/
+ng build --base-href=/ --configuration production --output-path=dist/ecommer/
 
-rsync -av --progress --delete --rsh='ssh' dist/ecommer/ root@34.101.129.73:/var/www/ecommer/
+rsync -av --progress --delete --rsh='ssh' dist/ecommer/ root@34.101.129.73:/var/www/ecommer/html/
